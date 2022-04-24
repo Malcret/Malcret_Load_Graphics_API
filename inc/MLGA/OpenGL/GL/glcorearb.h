@@ -68,10 +68,11 @@ extern "C" {
  */
 
 #if MLGA_TEST_GL_VERSION(1, 0)
-#ifndef GL_CORE_VERSION_1_0
-#define GL_CORE_VERSION_1_0 1
+#ifndef GL_VERSION_1_0
+#define GL_VERSION_1_0 1
 typedef void GLvoid;
 typedef unsigned int GLenum;
+#include "MLGA/OpenGL/KHR/khrplatform.h"
 typedef khronos_float_t GLfloat;
 typedef int GLint;
 typedef int GLsizei;
@@ -240,7 +241,7 @@ typedef khronos_uint8_t GLubyte;
 #define GL_DECR                           0x1E03
 #define GL_VENDOR                         0x1F00
 #define GL_RENDERER                       0x1F01
-#define GL_CORE_VERSION                        0x1F02
+#define GL_VERSION                        0x1F02
 #define GL_EXTENSIONS                     0x1F03
 #define GL_NEAREST                        0x2600
 #define GL_LINEAR                         0x2601
@@ -336,7 +337,7 @@ GLAPI void APIENTRY glPixelStorei(GLenum pname, GLint param);
 GLAPI void APIENTRY glReadBuffer(GLenum src);
 GLAPI void APIENTRY glReadPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void *pixels);
 GLAPI void APIENTRY glGetBooleanv(GLenum pname, GLboolean *data);
-GLAPI void APIENTRY glGetDoublev(GLenum pname, GLd#define GL_CORE_VERSIONouble *data);
+GLAPI void APIENTRY glGetDoublev(GLenum pname, GLdouble *data);
 GLAPI GLenum APIENTRY glGetError(void);
 GLAPI void APIENTRY glGetFloatv(GLenum pname, GLfloat *data);
 GLAPI void APIENTRY glGetIntegerv(GLenum pname, GLint *data);
@@ -353,8 +354,8 @@ GLAPI void APIENTRY glViewport(GLint x, GLint y, GLsizei width, GLsizei height);
 #endif /* MLGA_TEST_GL_VERSION(1, 0) */
 
 #if MLGA_TEST_GL_VERSION(1, 1)
-#ifndef GL_CORE_VERSION_1_1
-#define GL_CORE_VERSION_1_1 1
+#ifndef GL_VERSION_1_1
+#define GL_VERSION_1_1 1
 typedef khronos_float_t GLclampf;
 typedef double GLclampd;
 #define GL_COLOR_LOGIC_OP                 0x0BF2
@@ -420,8 +421,8 @@ GLAPI GLboolean APIENTRY glIsTexture(GLuint texture);
 #endif /* MLGA_TEST_VERSION(1, 1) */
 
 #if MLGA_TEST_GL_VERSION(1, 2)
-#ifndef GL_CORE_VERSION_1_2
-#define GL_CORE_VERSION_1_2 1
+#ifndef GL_VERSION_1_2
+#define GL_VERSION_1_2 1
 #define GL_UNSIGNED_BYTE_3_3_2            0x8032
 #define GL_UNSIGNED_SHORT_4_4_4_4         0x8033
 #define GL_UNSIGNED_SHORT_5_5_5_1         0x8034
@@ -466,12 +467,12 @@ GLAPI void APIENTRY glDrawRangeElements(GLenum mode, GLuint start, GLuint end, G
 GLAPI void APIENTRY glTexImage3D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void *pixels);
 GLAPI void APIENTRY glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void *pixels);
 GLAPI void APIENTRY glCopyTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
-#endif /* !GL_CORE_VERSION_1_2 */
+#endif /* !GL_VERSION_1_2 */
 #endif /* MLGA_TEST_VERSION(1, 2) */
 
 #if MLGA_TEST_GL_VERSION(1, 3)
-#ifndef GL_CORE_VERSION_1_3
-#define GL_CORE_VERSION_1_3 1
+#ifndef GL_VERSION_1_3
+#define GL_VERSION_1_3 1
 #define GL_TEXTURE0                       0x84C0
 #define GL_TEXTURE1                       0x84C1
 #define GL_TEXTURE2                       0x84C2
@@ -549,12 +550,12 @@ GLAPI void APIENTRY glCompressedTexSubImage3D(GLenum target, GLint level, GLint 
 GLAPI void APIENTRY glCompressedTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void *data);
 GLAPI void APIENTRY glCompressedTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const void *data);
 GLAPI void APIENTRY glGetCompressedTexImage(GLenum target, GLint level, void *img);
-#endif /* !GL_CORE_VERSION_1_3 */
+#endif /* !GL_VERSION_1_3 */
 #endif /* MLGA_TEST_GL_VERSION(1, 3) */
 
 #if MLGA_TEST_GL_VERSION(1, 4)
-#ifndef GL_CORE_VERSION_1_4
-#define GL_CORE_VERSION_1_4 1
+#ifndef GL_VERSION_1_4
+#define GL_VERSION_1_4 1
 #define GL_BLEND_DST_RGB                  0x80C8
 #define GL_BLEND_SRC_RGB                  0x80C9
 #define GL_BLEND_DST_ALPHA                0x80CA
@@ -600,12 +601,12 @@ GLAPI void APIENTRY glPointParameteri(GLenum pname, GLint param);
 GLAPI void APIENTRY glPointParameteriv(GLenum pname, const GLint *params);
 GLAPI void APIENTRY glBlendColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
 GLAPI void APIENTRY glBlendEquation(GLenum mode);
-#endif /* !GL_CORE_VERSION_1_4 */
+#endif /* !GL_VERSION_1_4 */
 #endif /* MLGA_TEST_GL_VERSION(1, 4) */
 
 #if MLGA_TEST_GL_VERSION(1, 5)
-#ifndef GL_CORE_VERSION_1_5
-#define GL_CORE_VERSION_1_5 1
+#ifndef GL_VERSION_1_5
+#define GL_VERSION_1_5 1
 typedef khronos_ssize_t GLsizeiptr;
 typedef khronos_intptr_t GLintptr;
 #define GL_BUFFER_SIZE                    0x8764
@@ -674,12 +675,12 @@ GLAPI void *APIENTRY glMapBuffer(GLenum target, GLenum access);
 GLAPI GLboolean APIENTRY glUnmapBuffer(GLenum target);
 GLAPI void APIENTRY glGetBufferParameteriv(GLenum target, GLenum pname, GLint *params);
 GLAPI void APIENTRY glGetBufferPointerv(GLenum target, GLenum pname, void **params);
-#endif /* !GL_CORE_VERSION_1_5 */
+#endif /* !GL_VERSION_1_5 */
 #endif /* MLGA_TEST_GL_VERSION(1, 5) */
 
 #if MLGA_TEST_GL_VERSION(2, 0)
-#ifndef GL_CORE_VERSION_2_0
-#define GL_CORE_VERSION_2_0 1
+#ifndef GL_VERSION_2_0
+#define GL_VERSION_2_0 1
 typedef char GLchar;
 typedef khronos_int16_t GLshort;
 typedef khronos_int8_t GLbyte;
@@ -950,12 +951,12 @@ GLAPI void APIENTRY glVertexAttrib4ubv(GLuint index, const GLubyte *v);
 GLAPI void APIENTRY glVertexAttrib4uiv(GLuint index, const GLuint *v);
 GLAPI void APIENTRY glVertexAttrib4usv(GLuint index, const GLushort *v);
 GLAPI void APIENTRY glVertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void *pointer);
-#endif /* !GL_CORE_VERSION_2_0 */
+#endif /* !GL_VERSION_2_0 */
 #endif /* MLGA_TEST_GL_VERSION(2, 0) */
 
 #if MLGA_TEST_GL_VERSION(2, 1)
-#ifndef GL_CORE_VERSION_2_1
-#define GL_CORE_VERSION_2_1 1
+#ifndef GL_VERSION_2_1
+#define GL_VERSION_2_1 1
 #define GL_PIXEL_PACK_BUFFER              0x88EB
 #define GL_PIXEL_UNPACK_BUFFER            0x88EC
 #define GL_PIXEL_PACK_BUFFER_BINDING      0x88ED
@@ -984,12 +985,12 @@ GLAPI void APIENTRY glUniformMatrix2x4fv(GLint location, GLsizei count, GLboolea
 GLAPI void APIENTRY glUniformMatrix4x2fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
 GLAPI void APIENTRY glUniformMatrix3x4fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
 GLAPI void APIENTRY glUniformMatrix4x3fv(GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
-#endif /* !GL_CORE_VERSION_2_1 */
+#endif /* !GL_VERSION_2_1 */
 #endif /* MLGA_TEST_GL_VERSION(2, 1) */
 
 #if MLGA_TEST_GL_VERSION(3, 0)
-#ifndef GL_CORE_VERSION_3_0
-#define GL_CORE_VERSION_3_0 1
+#ifndef GL_VERSION_3_0
+#define GL_VERSION_3_0 1
 typedef khronos_uint16_t GLhalf;
 #define GL_COMPARE_REF_TO_TEXTURE         0x884E
 #define GL_CLIP_DISTANCE0                 0x3000
@@ -1390,12 +1391,12 @@ GLAPI void APIENTRY glBindVertexArray(GLuint array);
 GLAPI void APIENTRY glDeleteVertexArrays(GLsizei n, const GLuint *arrays);
 GLAPI void APIENTRY glGenVertexArrays(GLsizei n, GLuint *arrays);
 GLAPI GLboolean APIENTRY glIsVertexArray(GLuint array);
-#endif /* !GL_CORE_VERSION_3_0 */
+#endif /* !GL_VERSION_3_0 */
 #endif /* MLGA_TEST_GL_VERSION(3, 0) */
 
 #if MLGA_TEST_GL_VERSION(3, 1)
-#ifndef GL_CORE_VERSION_3_1
-#define GL_CORE_VERSION_3_1 1
+#ifndef GL_VERSION_3_1
+#define GL_VERSION_3_1 1
 #define GL_SAMPLER_2D_RECT                0x8B63
 #define GL_SAMPLER_2D_RECT_SHADOW         0x8B64
 #define GL_SAMPLER_BUFFER                 0x8DC2
@@ -1481,12 +1482,12 @@ GLAPI GLuint APIENTRY glGetUniformBlockIndex(GLuint program, const GLchar *unifo
 GLAPI void APIENTRY glGetActiveUniformBlockiv(GLuint program, GLuint uniformBlockIndex, GLenum pname, GLint *params);
 GLAPI void APIENTRY glGetActiveUniformBlockName(GLuint program, GLuint uniformBlockIndex, GLsizei bufSize, GLsizei *length, GLchar *uniformBlockName);
 GLAPI void APIENTRY glUniformBlockBinding(GLuint program, GLuint uniformBlockIndex, GLuint uniformBlockBinding);
-#endif /* !GL_CORE_VERSION_3_1 */
+#endif /* !GL_VERSION_3_1 */
 #endif /* MLGA_TEST_GL_VERSION(3, 1) */
 
 #if MLGA_TEST_GL_VERSION(3, 2)
-#ifndef GL_CORE_VERSION_3_2
-#define GL_CORE_VERSION_3_2 1
+#ifndef GL_VERSION_3_2
+#define GL_VERSION_3_2 1
 typedef struct __GLsync *GLsync;
 typedef khronos_uint64_t GLuint64;
 typedef khronos_int64_t GLint64;
@@ -1592,12 +1593,12 @@ GLAPI void APIENTRY glTexImage2DMultisample(GLenum target, GLsizei samples, GLen
 GLAPI void APIENTRY glTexImage3DMultisample(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
 GLAPI void APIENTRY glGetMultisamplefv(GLenum pname, GLuint index, GLfloat *val);
 GLAPI void APIENTRY glSampleMaski(GLuint maskNumber, GLbitfield mask);
-#endif /* !GL_CORE_VERSION_3_2 */
+#endif /* !GL_VERSION_3_2 */
 #endif /* MLGA_TEST_GL_VERSION(3, 2) */
 
 #if MLGA_TEST_GL_VERSION(3, 3)
-#ifndef GL_CORE_VERSION_3_3
-#define GL_CORE_VERSION_3_3 1
+#ifndef GL_VERSION_3_3
+#define GL_VERSION_3_3 1
 #define GL_VERTEX_ATTRIB_ARRAY_DIVISOR    0x88FE
 #define GL_SRC1_COLOR                     0x88F9
 #define GL_ONE_MINUS_SRC1_COLOR           0x88FA
@@ -1642,12 +1643,12 @@ typedef void (APIENTRYP PFNGLVERTEXATTRIBP3UIPROC) (GLuint index, GLenum type, G
 typedef void (APIENTRYP PFNGLVERTEXATTRIBP3UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
 typedef void (APIENTRYP PFNGLVERTEXATTRIBP4UIPROC) (GLuint index, GLenum type, GLboolean normalized, GLuint value);
 typedef void (APIENTRYP PFNGLVERTEXATTRIBP4UIVPROC) (GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-#endif /* !GL_CORE_VERSION_3_3 */
+#endif /* !GL_VERSION_3_3 */
 #endif /* MLGA_TEST_GL_VERSION(3, 3) */
 
 #if MLGA_TEST_GL_VERSION(4, 0)
-#ifndef GL_CORE_VERSION_4_0
-#define GL_CORE_VERSION_4_0 1
+#ifndef GL_VERSION_4_0
+#define GL_VERSION_4_0 1
 #define GL_SAMPLE_SHADING                 0x8C36
 #define GL_MIN_SAMPLE_SHADING_VALUE       0x8C37
 #define GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET 0x8E5E
@@ -1799,12 +1800,12 @@ GLAPI void APIENTRY glVertexAttribP3ui(GLuint index, GLenum type, GLboolean norm
 GLAPI void APIENTRY glVertexAttribP3uiv(GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
 GLAPI void APIENTRY glVertexAttribP4ui(GLuint index, GLenum type, GLboolean normalized, GLuint value);
 GLAPI void APIENTRY glVertexAttribP4uiv(GLuint index, GLenum type, GLboolean normalized, const GLuint *value);
-#endif /* !GL_CORE_VERSION_4_0 */
+#endif /* !GL_VERSION_4_0 */
 #endif /* MLGA_TEST_GL_VERSION(4, 0) */
 
 #if MLGA_TEST_GL_VERSION(4, 1)
-#ifndef GL_CORE_VERSION_4_1
-#define GL_CORE_VERSION_4_1 1
+#ifndef GL_VERSION_4_1
+#define GL_VERSION_4_1 1
 #define GL_FIXED                          0x140C
 #define GL_IMPLEMENTATION_COLOR_READ_TYPE 0x8B9A
 #define GL_IMPLEMENTATION_COLOR_READ_FORMAT 0x8B9B
@@ -2062,12 +2063,12 @@ GLAPI void APIENTRY glDepthRangeArrayv(GLuint first, GLsizei count, const GLdoub
 GLAPI void APIENTRY glDepthRangeIndexed(GLuint index, GLdouble n, GLdouble f);
 GLAPI void APIENTRY glGetFloati_v(GLenum target, GLuint index, GLfloat *data);
 GLAPI void APIENTRY glGetDoublei_v(GLenum target, GLuint index, GLdouble *data);
-#endif /* !GL_CORE_VERSION_4_1 */
+#endif /* !GL_VERSION_4_1 */
 #endif /* MLGA_TEST_GL_VERSION(4, 1) */
 
 #if MLGA_TEST_GL_VERSION(4, 2)
-#ifndef GL_CORE_VERSION_4_2
-#define GL_CORE_VERSION_4_2 1
+#ifndef GL_VERSION_4_2
+#define GL_VERSION_4_2 1
 #define GL_COPY_READ_BUFFER_BINDING       0x8F36
 #define GL_COPY_WRITE_BUFFER_BINDING      0x8F37
 #define GL_TRANSFORM_FEEDBACK_ACTIVE      0x8E24
@@ -2204,12 +2205,12 @@ GLAPI void APIENTRY glTexStorage2D(GLenum target, GLsizei levels, GLenum interna
 GLAPI void APIENTRY glTexStorage3D(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth);
 GLAPI void APIENTRY glDrawTransformFeedbackInstanced(GLenum mode, GLuint id, GLsizei instancecount);
 GLAPI void APIENTRY glDrawTransformFeedbackStreamInstanced(GLenum mode, GLuint id, GLuint stream, GLsizei instancecount);
-#endif /* !GL_CORE_VERSION_4_2 */
+#endif /* !GL_VERSION_4_2 */
 #endif /* MLGA_TEST_GL_VERSION(4, 2) */
 
 #if MLGA_TEST_GL_VERSION(4, 3)
-#ifndef GL_CORE_VERSION_4_3
-#define GL_CORE_VERSION_4_3 1
+#ifndef GL_VERSION_4_3
+#define GL_VERSION_4_3 1
 typedef void (APIENTRY  *GLDEBUGPROC)(GLenum source,GLenum type,GLuint id,GLenum severity,GLsizei length,const GLchar *message,const void *userParam);
 #define GL_NUM_SHADING_LANGUAGE_VERSIONS  0x82E9
 #define GL_VERTEX_ATTRIB_ARRAY_LONG       0x874E
@@ -2555,12 +2556,12 @@ GLAPI void APIENTRY glObjectLabel(GLenum identifier, GLuint name, GLsizei length
 GLAPI void APIENTRY glGetObjectLabel(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei *length, GLchar *label);
 GLAPI void APIENTRY glObjectPtrLabel(const void *ptr, GLsizei length, const GLchar *label);
 GLAPI void APIENTRY glGetObjectPtrLabel(const void *ptr, GLsizei bufSize, GLsizei *length, GLchar *label);
-#endif /* !GL_CORE_VERSION_4_3 */
+#endif /* !GL_VERSION_4_3 */
 #endif /* MLGA_TEST_GL_VERSION(4, 3) */
 
 #if MLGA_TEST_GL_VERSION(4, 4)
-#ifndef GL_CORE_VERSION_4_4
-#define GL_CORE_VERSION_4_4 1
+#ifndef GL_VERSION_4_4
+#define GL_VERSION_4_4 1
 #define GL_MAX_VERTEX_ATTRIB_STRIDE       0x82E5
 #define GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED 0x8221
 #define GL_TEXTURE_BUFFER_BINDING         0x8C2A
@@ -2598,12 +2599,12 @@ GLAPI void APIENTRY glBindTextures(GLuint first, GLsizei count, const GLuint *te
 GLAPI void APIENTRY glBindSamplers(GLuint first, GLsizei count, const GLuint *samplers);
 GLAPI void APIENTRY glBindImageTextures(GLuint first, GLsizei count, const GLuint *textures);
 GLAPI void APIENTRY glBindVertexBuffers(GLuint first, GLsizei count, const GLuint *buffers, const GLintptr *offsets, const GLsizei *strides);
-#endif /* !GL_CORE_VERSION_4_4 */
+#endif /* !GL_VERSION_4_4 */
 #endif /* MLGA_TEST_GL_VERSION(4, 4) */
 
 #if MLGA_TEST_GL_VERSION(4, 5)
-#ifndef GL_CORE_VERSION_4_5
-#define GL_CORE_VERSION_4_5 1
+#ifndef GL_VERSION_4_5
+#define GL_VERSION_4_5 1
 #define GL_CONTEXT_LOST                   0x0507
 #define GL_NEGATIVE_ONE_TO_ONE            0x935E
 #define GL_ZERO_TO_ONE                    0x935F
@@ -2846,12 +2847,12 @@ GLAPI void APIENTRY glGetnUniformiv(GLuint program, GLint location, GLsizei bufS
 GLAPI void APIENTRY glGetnUniformuiv(GLuint program, GLint location, GLsizei bufSize, GLuint *params);
 GLAPI void APIENTRY glReadnPixels(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void *data);
 GLAPI void APIENTRY glTextureBarrier(void);
-#endif /* !GL_CORE_VERSION_4_5 */
+#endif /* !GL_VERSION_4_5 */
 #endif /* MLGA_TEST_GL_VERSION(4, 5) */
 
 #if MLGA_TEST_GL_VERSION(4, 6)
-#ifndef GL_CORE_VERSION_4_6
-#define GL_CORE_VERSION_4_6 1
+#ifndef GL_VERSION_4_6
+#define GL_VERSION_4_6 1
 #define GL_SHADER_BINARY_FORMAT_SPIR_V    0x9551
 #define GL_SPIR_V_BINARY                  0x9552
 #define GL_PARAMETER_BUFFER               0x80EE
@@ -2882,7 +2883,7 @@ GLAPI void APIENTRY glSpecializeShader(GLuint shader, const GLchar *pEntryPoint,
 GLAPI void APIENTRY glMultiDrawArraysIndirectCount(GLenum mode, const void *indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
 GLAPI void APIENTRY glMultiDrawElementsIndirectCount(GLenum mode, GLenum type, const void *indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
 GLAPI void APIENTRY glPolygonOffsetClamp(GLfloat factor, GLfloat units, GLfloat clamp);
-#endif /* !GL_CORE_VERSION_4_6 */
+#endif /* !GL_VERSION_4_6 */
 #endif /* MLGA_TEST_GL_VERSION(4, 6) */
 
 #ifndef GL_ARB_ES2_compatibility

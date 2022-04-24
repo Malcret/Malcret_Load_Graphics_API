@@ -34,6 +34,8 @@ extern "C" {
 
 #define GL_GLEXT_VERSION 20211115
 
+#include "MLGA/OpenGL/KHR/khrplatform.h"
+
 /* Generated C header for:
  * API: gl
  * Profile: compatibility

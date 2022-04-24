@@ -1,4 +1,4 @@
-#include "OpenGL/opengl.h"
+#include "MLGA/OpenGL/opengl.h"
 
 #include <stdio.h>
 
@@ -44,28 +44,8 @@ void *mlga_getGLFuncAddress(const char *name) {
 
 #define mlga_loadGLFunc(type, name) type name = (type)mlga_getGLFuncAddress(#name); if (!name) { return 1; }
 
-#define MLGA_LOAD_GL_CORE_1_0_FUNC
-#define MLGA_LOAD_GL_CORE_1_1_FUNC
-#define MLGA_LOAD_GL_CORE_1_2_FUNC
-#define MLGA_LOAD_GL_CORE_1_3_FUNC
-#define MLGA_LOAD_GL_CORE_1_4_FUNC
-#define MLGA_LOAD_GL_CORE_1_5_FUNC
-#define MLGA_LOAD_GL_CORE_2_0_FUNC
-#define MLGA_LOAD_GL_CORE_2_1_FUNC
-#define MLGA_LOAD_GL_CORE_3_0_FUNC
-#define MLGA_LOAD_GL_CORE_3_1_FUNC
-#define MLGA_LOAD_GL_CORE_3_2_FUNC
-#define MLGA_LOAD_GL_CORE_3_3_FUNC
-#define MLGA_LOAD_GL_CORE_4_0_FUNC
-#define MLGA_LOAD_GL_CORE_4_1_FUNC
-#define MLGA_LOAD_GL_CORE_4_2_FUNC
-#define MLGA_LOAD_GL_CORE_4_3_FUNC
-#define MLGA_LOAD_GL_CORE_4_4_FUNC
-#define MLGA_LOAD_GL_CORE_4_5_FUNC
-#define MLGA_LOAD_GL_CORE_4_6_FUNC
-
-#ifdef MLGA_GL_CORE_PROGILE
-#ifdef GL_CORE_VERSION_1_0
+#ifdef MLGA_GL_CORE_PROFILE
+#ifdef GL_VERSION_1_0
 #define MLGA_LOAD_GL_CORE_1_0_FUNC mlga_loadGLFunc(PFNGLCULLFACEPROC, glCullFace);\
 mlga_loadGLFunc(PFNGLFRONTFACEPROC, glFrontFace);\
 mlga_loadGLFunc(PFNGLHINTPROC, glHint);\
@@ -114,8 +94,8 @@ mlga_loadGLFunc(PFNGLGETTEXLEVELPARAMETERIVPROC, glGetTexLevelParameteriv);\
 mlga_loadGLFunc(PFNGLISENABLEDPROC, glIsEnabled);\
 mlga_loadGLFunc(PFNGLDEPTHRANGEPROC, glDepthRange);\
 mlga_loadGLFunc(PFNGLVIEWPORTPROC, glViewport);
-#endif /* GL_CORE_VERSION_1_0 */
-#ifdef GL_CORE_VERSION_1_1
+#endif /* GL_VERSION_1_0 */
+#ifdef GL_VERSION_1_1
 #define MLGA_LOAD_GL_CORE_1_1_FUNC 	mlga_loadGLFunc(PFNGLDRAWARRAYSPROC, glDrawArrays);\
 mlga_loadGLFunc(PFNGLDRAWELEMENTSPROC, glDrawElements);\
 mlga_loadGLFunc(PFNGLGETPOINTERVPROC, glGetPointerv);\
@@ -130,14 +110,14 @@ mlga_loadGLFunc(PFNGLBINDTEXTUREPROC, glBindTexture);\
 mlga_loadGLFunc(PFNGLDELETETEXTURESPROC, glDeleteTextures);\
 mlga_loadGLFunc(PFNGLGENTEXTURESPROC, glGenTextures);\
 mlga_loadGLFunc(PFNGLISTEXTUREPROC, glIsTexture);
-#endif /* GL_CORE_VERSION_1_1 */
-#ifdef GL_CORE_VERSION_1_2
+#endif /* GL_VERSION_1_1 */
+#ifdef GL_VERSION_1_2
 #define MLGA_LOAD_GL_CORE_1_2_FUNC mlga_loadGLFunc(PFNGLDRAWRANGEELEMENTSPROC, glDrawRangeElements);\
 mlga_loadGLFunc(PFNGLTEXIMAGE3DPROC, glTexImage3D);\
 mlga_loadGLFunc(PFNGLTEXSUBIMAGE3DPROC, glTexSubImage3D);\
 mlga_loadGLFunc(PFNGLCOPYTEXSUBIMAGE3DPROC, glCopyTexSubImage3D);
-#endif /* GL_CORE_VERSION_1_2 */
-#ifdef GL_CORE_VERSION_1_3
+#endif /* GL_VERSION_1_2 */
+#ifdef GL_VERSION_1_3
 #define MLGA_LOAD_GL_CORE_1_3_FUNC 	mlga_loadGLFunc(PFNGLACTIVETEXTUREPROC, glActiveTexture);\
 mlga_loadGLFunc(PFNGLSAMPLECOVERAGEPROC, glSampleCoverage);\
 mlga_loadGLFunc(PFNGLCOMPRESSEDTEXIMAGE3DPROC, glCompressedTexImage3D);\
@@ -147,8 +127,8 @@ mlga_loadGLFunc(PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC, glCompressedTexSubImage3D);\
 mlga_loadGLFunc(PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC, glCompressedTexSubImage2D);\
 mlga_loadGLFunc(PFNGLCOMPRESSEDTEXSUBIMAGE1DPROC, glCompressedTexSubImage1D);\
 mlga_loadGLFunc(PFNGLGETCOMPRESSEDTEXIMAGEPROC, glGetCompressedTexImage);
-#endif /* GL_CORE_VERSION_1_3 */
-#ifdef GL_CORE_VERSION_1_4
+#endif /* GL_VERSION_1_3 */
+#ifdef GL_VERSION_1_4
 #define MLGA_LOAD_GL_CORE_1_4_FUNC 	mlga_loadGLFunc(PFNGLBLENDFUNCSEPARATEPROC, glBlendFuncSeparate);\
 mlga_loadGLFunc(PFNGLMULTIDRAWARRAYSPROC, glMultiDrawArrays);\
 mlga_loadGLFunc(PFNGLMULTIDRAWELEMENTSPROC, glMultiDrawElements);\
@@ -158,8 +138,8 @@ mlga_loadGLFunc(PFNGLPOINTPARAMETERIPROC, glPointParameteri);\
 mlga_loadGLFunc(PFNGLPOINTPARAMETERIVPROC, glPointParameteriv);\
 mlga_loadGLFunc(PFNGLBLENDCOLORPROC, glBlendColor);\
 mlga_loadGLFunc(PFNGLBLENDEQUATIONPROC, glBlendEquation);
-#endif /* GL_CORE_VERSION_1_4 */
-#ifdef GL_CORE_VERSION_1_4
+#endif /* GL_VERSION_1_4 */
+#ifdef GL_VERSION_1_4
 #define MLGA_LOAD_GL_CORE_1_5_FUNC 	mlga_loadGLFunc(PFNGLGENQUERIESPROC, glGenQueries);\
 mlga_loadGLFunc(PFNGLDELETEQUERIESPROC, glDeleteQueries);\
 mlga_loadGLFunc(PFNGLISQUERYPROC, glIsQuery);\
@@ -179,8 +159,8 @@ mlga_loadGLFunc(PFNGLMAPBUFFERPROC, glMapBuffer);\
 mlga_loadGLFunc(PFNGLUNMAPBUFFERPROC, glUnmapBuffer);\
 mlga_loadGLFunc(PFNGLGETBUFFERPARAMETERIVPROC, glGetBufferParameteriv);\
 mlga_loadGLFunc(PFNGLGETBUFFERPOINTERVPROC, glGetBufferPointerv);
-#endif GL_CORE_VERSION_1_5
-#ifdef GL_CORE_VERSION_2_0
+#endif /* GL_VERSION_1_5 */
+#ifdef GL_VERSION_2_0
 #define MLGA_LOAD_GL_CORE_2_0_FUNC mlga_loadGLFunc(PFNGLBLENDEQUATIONSEPARATEPROC, glBlendEquationSeparate);\
 mlga_loadGLFunc(PFNGLDRAWBUFFERSPROC, glDrawBuffers);\
 mlga_loadGLFunc(PFNGLSTENCILOPSEPARATEPROC, glStencilOpSeparate);\
@@ -274,16 +254,16 @@ mlga_loadGLFunc(PFNGLVERTEXATTRIB4UBVPROC, glVertexAttrib4ubv);\
 mlga_loadGLFunc(PFNGLVERTEXATTRIB4UIVPROC, glVertexAttrib4uiv);\
 mlga_loadGLFunc(PFNGLVERTEXATTRIB4USVPROC, glVertexAttrib4usv);\
 mlga_loadGLFunc(PFNGLVERTEXATTRIBPOINTERPROC, glVertexAttribPointer);
-#endif /* GL_CORE_VERSION_2_0 */
-#ifdef GL_CORE_VERSION_2_1
+#endif /* GL_VERSION_2_0 */
+#ifdef GL_VERSION_2_1
 #define MLGA_LOAD_GL_CORE_2_1_FUNC 	mlga_loadGLFunc(PFNGLUNIFORMMATRIX2X3FVPROC, glUniformMatrix2x3fv);\
 mlga_loadGLFunc(PFNGLUNIFORMMATRIX3X2FVPROC, glUniformMatrix3x2fv);\
 mlga_loadGLFunc(PFNGLUNIFORMMATRIX2X4FVPROC, glUniformMatrix2x4fv);\
 mlga_loadGLFunc(PFNGLUNIFORMMATRIX4X2FVPROC, glUniformMatrix4x2fv);\
 mlga_loadGLFunc(PFNGLUNIFORMMATRIX3X4FVPROC, glUniformMatrix3x4fv);\
 mlga_loadGLFunc(PFNGLUNIFORMMATRIX4X3FVPROC, glUniformMatrix4x3fv);
-#endif /* GL_CORE_VERSION_2_1 */
-#ifdef GL_CORE_VERSION_3_0
+#endif /* GL_VERSION_2_1 */
+#ifdef GL_VERSION_3_0
 #define MLGA_LOAD_GL_CORE_3_0_FUNC mlga_loadGLFunc(PFNGLCOLORMASKIPROC, glColorMaski);\
 mlga_loadGLFunc(PFNGLGETBOOLEANI_VPROC, glGetBooleani_v);\
 mlga_loadGLFunc(PFNGLGETINTEGERI_VPROC, glGetIntegeri_v);\
@@ -368,8 +348,8 @@ mlga_loadGLFunc(PFNGLBINDVERTEXARRAYPROC, glBindVertexArray);\
 mlga_loadGLFunc(PFNGLDELETEVERTEXARRAYSPROC, glDeleteVertexArrays);\
 mlga_loadGLFunc(PFNGLGENVERTEXARRAYSPROC, glGenVertexArrays);\
 mlga_loadGLFunc(PFNGLISVERTEXARRAYPROC, glIsVertexArray);
-#endif /* GL_CORE_VERSION_3_0 */
-#ifdef GL_CORE_VERSION_3_1
+#endif /* GL_VERSION_3_0 */
+#ifdef GL_VERSION_3_1
 #define MLGA_LOAD_GL_CORE_3_1_FUNC 	mlga_loadGLFunc(PFNGLDRAWARRAYSINSTANCEDPROC, glDrawArraysInstanced);\
 mlga_loadGLFunc(PFNGLDRAWELEMENTSINSTANCEDPROC, glDrawElementsInstanced);\
 mlga_loadGLFunc(PFNGLTEXBUFFERPROC, glTexBuffer);\
@@ -382,8 +362,8 @@ mlga_loadGLFunc(PFNGLGETUNIFORMBLOCKINDEXPROC, glGetUniformBlockIndex);\
 mlga_loadGLFunc(PFNGLGETACTIVEUNIFORMBLOCKIVPROC, glGetActiveUniformBlockiv);\
 mlga_loadGLFunc(PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC, glGetActiveUniformBlockName);\
 mlga_loadGLFunc(PFNGLUNIFORMBLOCKBINDINGPROC, glUniformBlockBinding);
-#endif /* GL_CORE_VERSION_3_1 */
-#ifdef GL_CORE_VERSION_3_2
+#endif /* GL_VERSION_3_1 */
+#ifdef GL_VERSION_3_2
 #define MLGA_LOAD_GL_CORE_3_2_FUNC 	mlga_loadGLFunc(PFNGLDRAWELEMENTSBASEVERTEXPROC, glDrawElementsBaseVertex);\
 mlga_loadGLFunc(PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC, glDrawRangeElementsBaseVertex);\
 mlga_loadGLFunc(PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC, glDrawElementsInstancedBaseVertex);\
@@ -403,8 +383,8 @@ mlga_loadGLFunc(PFNGLTEXIMAGE2DMULTISAMPLEPROC, glTexImage2DMultisample);\
 mlga_loadGLFunc(PFNGLTEXIMAGE3DMULTISAMPLEPROC, glTexImage3DMultisample);\
 mlga_loadGLFunc(PFNGLGETMULTISAMPLEFVPROC, glGetMultisamplefv);\
 mlga_loadGLFunc(PFNGLSAMPLEMASKIPROC, glSampleMaski);
-#endif /* GL_CORE_VERSION_3_2 */
-#ifdef GL_CORE_VERSION_3_3
+#endif /* GL_VERSION_3_2 */
+#ifdef GL_VERSION_3_3
 #define MLGA_LOAD_GL_CORE_3_3_FUNC 	mlga_loadGLFunc(PFNGLBINDFRAGDATALOCATIONINDEXEDPROC, glBindFragDataLocationIndexed);\
 mlga_loadGLFunc(PFNGLGETFRAGDATAINDEXPROC, glGetFragDataIndex);\
 mlga_loadGLFunc(PFNGLGENSAMPLERSPROC, glGenSamplers);\
@@ -433,8 +413,8 @@ mlga_loadGLFunc(PFNGLVERTEXATTRIBP3UIPROC, glVertexAttribP3ui);\
 mlga_loadGLFunc(PFNGLVERTEXATTRIBP3UIVPROC, glVertexAttribP3uiv);\
 mlga_loadGLFunc(PFNGLVERTEXATTRIBP4UIPROC, glVertexAttribP4ui);\
 mlga_loadGLFunc(PFNGLVERTEXATTRIBP4UIVPROC, glVertexAttribP4uiv);
-#endif /* GL_CORE_VERSION_3_3 */
-#ifdef GL_CORE_VERSION_4_0
+#endif /* GL_VERSION_3_3 */
+#ifdef GL_VERSION_4_0
 #define MLGA_LOAD_GL_CORE_4_0_FUNC mlga_loadGLFunc(PFNGLMINSAMPLESHADINGPROC, glMinSampleShading);\
 mlga_loadGLFunc(PFNGLBLENDEQUATIONIPROC, glBlendEquationi);\
 mlga_loadGLFunc(PFNGLBLENDEQUATIONSEPARATEIPROC, glBlendEquationSeparatei);\
@@ -481,8 +461,8 @@ mlga_loadGLFunc(PFNGLDRAWTRANSFORMFEEDBACKSTREAMPROC, glDrawTransformFeedbackStr
 mlga_loadGLFunc(PFNGLBEGINQUERYINDEXEDPROC, glBeginQueryIndexed);\
 mlga_loadGLFunc(PFNGLENDQUERYINDEXEDPROC, glEndQueryIndexed);\
 mlga_loadGLFunc(PFNGLGETQUERYINDEXEDIVPROC, glGetQueryIndexediv);
-#endif /* GL_CORE_VERSION_4_0 */
-#ifdef GL_CORE_VERSION_4_1
+#endif /* GL_VERSION_4_0 */
+#ifdef GL_VERSION_4_1
 #define MLGA_LOAD_GL_CORE_4_1_FUNC mlga_loadGLFunc(PFNGLRELEASESHADERCOMPILERPROC, glReleaseShaderCompiler);\
 mlga_loadGLFunc(PFNGLSHADERBINARYPROC, glShaderBinary);\
 mlga_loadGLFunc(PFNGLGETSHADERPRECISIONFORMATPROC, glGetShaderPrecisionFormat);\
@@ -571,8 +551,8 @@ mlga_loadGLFunc(PFNGLDEPTHRANGEARRAYVPROC, glDepthRangeArrayv);\
 mlga_loadGLFunc(PFNGLDEPTHRANGEINDEXEDPROC, glDepthRangeIndexed);\
 mlga_loadGLFunc(PFNGLGETFLOATI_VPROC, glGetFloati_v);\
 mlga_loadGLFunc(PFNGLGETDOUBLEI_VPROC, glGetDoublei_v);
-#endif /* GL_CORE_VERSION_4_1 */
-#ifdef GL_CORE_VERSION_4_2
+#endif /* GL_VERSION_4_1 */
+#ifdef GL_VERSION_4_2
 #define MLGA_LOAD_GL_CORE_4_2_FUNC mlga_loadGLFunc(PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC, glDrawArraysInstancedBaseInstance);\
 mlga_loadGLFunc(PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC, glDrawElementsInstancedBaseInstance);\
 mlga_loadGLFunc(PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC, glDrawElementsInstancedBaseVertexBaseInstance);\
@@ -585,8 +565,8 @@ mlga_loadGLFunc(PFNGLTEXSTORAGE2DPROC, glTexStorage2D);\
 mlga_loadGLFunc(PFNGLTEXSTORAGE3DPROC, glTexStorage3D);\
 mlga_loadGLFunc(PFNGLDRAWTRANSFORMFEEDBACKINSTANCEDPROC, glDrawTransformFeedbackInstanced);\
 mlga_loadGLFunc(PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC, glDrawTransformFeedbackStreamInstanced);
-#endif /* GL_CORE_VERSION_4_2 */
-#ifdef GL_CORE_VERSION_4_3
+#endif /* GL_VERSION_4_2 */
+#ifdef GL_VERSION_4_3
 #define MLGA_LOAD_GL_CORE_4_3_FUNC mlga_loadGLFunc(PFNGLCLEARBUFFERDATAPROC, glClearBufferData);\
 mlga_loadGLFunc(PFNGLCLEARBUFFERSUBDATAPROC, glClearBufferSubData);\
 mlga_loadGLFunc(PFNGLDISPATCHCOMPUTEPROC, glDispatchCompute);\
@@ -630,8 +610,8 @@ mlga_loadGLFunc(PFNGLOBJECTLABELPROC, glObjectLabel);\
 mlga_loadGLFunc(PFNGLGETOBJECTLABELPROC, glGetObjectLabel);\
 mlga_loadGLFunc(PFNGLOBJECTPTRLABELPROC, glObjectPtrLabel);\
 mlga_loadGLFunc(PFNGLGETOBJECTPTRLABELPROC, glGetObjectPtrLabel);
-#endif /* GL_CORE_VERSION_4_3 */
-#ifdef GL_CORE_VERSION_4_4
+#endif /* GL_VERSION_4_3 */
+#ifdef GL_VERSION_4_4
 #define MLGA_LOAD_GL_CORE_4_4_FUNC mlga_loadGLFunc(PFNGLBUFFERSTORAGEPROC, glBufferStorage);\
 mlga_loadGLFunc(PFNGLCLEARTEXIMAGEPROC, glClearTexImage);\
 mlga_loadGLFunc(PFNGLCLEARTEXSUBIMAGEPROC, glClearTexSubImage);\
@@ -641,8 +621,8 @@ mlga_loadGLFunc(PFNGLBINDTEXTURESPROC, glBindTextures);\
 mlga_loadGLFunc(PFNGLBINDSAMPLERSPROC, glBindSamplers);\
 mlga_loadGLFunc(PFNGLBINDIMAGETEXTURESPROC, glBindImageTextures);\
 mlga_loadGLFunc(PFNGLBINDVERTEXBUFFERSPROC, glBindVertexBuffers);
-#endif /* GL_CORE_VERSION_4_4 */
-#ifdef GL_CORE_VERSION_4_5
+#endif /* GL_VERSION_4_4 */
+#ifdef GL_VERSION_4_5
 #define MLGA_LOAD_GL_CORE_4_5_FUNC mlga_loadGLFunc(PFNGLCLIPCONTROLPROC, glClipControl);\
 mlga_loadGLFunc(PFNGLCREATETRANSFORMFEEDBACKSPROC, glCreateTransformFeedbacks);\
 mlga_loadGLFunc(PFNGLTRANSFORMFEEDBACKBUFFERBASEPROC, glTransformFeedbackBufferBase);\
@@ -753,14 +733,72 @@ mlga_loadGLFunc(PFNGLGETNUNIFORMIVPROC, glGetnUniformiv);\
 mlga_loadGLFunc(PFNGLGETNUNIFORMUIVPROC, glGetnUniformuiv);\
 mlga_loadGLFunc(PFNGLREADNPIXELSPROC, glReadnPixels);\
 mlga_loadGLFunc(PFNGLTEXTUREBARRIERPROC, glTextureBarrier);
-#endif /* GL_CORE_VERSION_4_5 */
-#ifdef GL_CORE_VERSION_4_6
+#endif /* GL_VERSION_4_5 */
+#ifdef GL_VERSION_4_6
 #define MLGA_LOAD_GL_CORE_4_6_FUNC mlga_loadGLFunc(PFNGLSPECIALIZESHADERPROC, glSpecializeShader);\
 mlga_loadGLFunc(PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC, glMultiDrawArraysIndirectCount);\
 mlga_loadGLFunc(PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC, glMultiDrawElementsIndirectCount);\
 mlga_loadGLFunc(PFNGLPOLYGONOFFSETCLAMPPROC, glPolygonOffsetClamp);
-#endif /* GL_CORE_VERSION_4_6 */
+#endif /* GL_VERSION_4_6 */
 #endif /* MLGA_GL_CORE_PROFILE */
+
+#ifndef MLGA_LOAD_GL_CORE_1_0_FUNC
+#define MLGA_LOAD_GL_CORE_1_0_FUNC
+#endif /* MLGA_LOAD_GL_CORE_1_0_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_1_1_FUNC
+#define MLGA_LOAD_GL_CORE_1_1_FUNC
+#endif /* MLGA_LOAD_GL_CORE__1_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_1_2_FUNC
+#define MLGA_LOAD_GL_CORE_1_2_FUNC
+#endif /* MLGA_LOAD_GL_CORE_1_2_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_1_3_FUNC
+#define MLGA_LOAD_GL_CORE_1_3_FUNC
+#endif /* MLGA_LOAD_GL_CORE_1_3_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_1_4_FUNC
+#define MLGA_LOAD_GL_CORE_1_4_FUNC
+#endif /* MLGA_LOAD_GL_CORE_1_4_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_1_5_FUNC
+#define MLGA_LOAD_GL_CORE_1_5_FUNC
+#endif /* MLGA_LOAD_GL_CORE_1_5_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_2_0_FUNC
+#define MLGA_LOAD_GL_CORE_2_0_FUNC
+#endif /* MLGA_LOAD_GL_CORE_2_0_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_2_1_FUNC
+#define MLGA_LOAD_GL_CORE_2_1_FUNC
+#endif /* MLGA_LOAD_GL_CORE_2_1_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_2_0_FUNC
+#define MLGA_LOAD_GL_CORE_3_0_FUNC
+#endif /* MLGA_LOAD_GL_CORE_3_0_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_3_1_FUNC
+#define MLGA_LOAD_GL_CORE_3_1_FUNC
+#endif /* MLGA_LOAD_GL_CORE_3_1_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_3_2_FUNC
+#define MLGA_LOAD_GL_CORE_3_2_FUNC
+#endif /* MLGA_LOAD_GL_CORE_3_2_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_3_3_FUNC
+#define MLGA_LOAD_GL_CORE_3_3_FUNC
+#endif /* MLGA_LOAD_GL_CORE_3_3_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_0_FUNC
+#define MLGA_LOAD_GL_CORE_4_0_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_0_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_1_FUNC
+#define MLGA_LOAD_GL_CORE_4_1_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_1_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_2_FUNC
+#define MLGA_LOAD_GL_CORE_4_2_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_2_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_3_FUNC
+#define MLGA_LOAD_GL_CORE_4_3_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_3_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_4_FUNC
+#define MLGA_LOAD_GL_CORE_4_4_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_4_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_5_FUNC
+#define MLGA_LOAD_GL_CORE_4_5_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_5_FUNC */
+#ifndef MLGA_LOAD_GL_CORE_4_6_FUNC
+#define MLGA_LOAD_GL_CORE_4_6_FUNC
+#endif /* MLGA_LOAD_GL_CORE_4_6_FUNC */
 
 int mlga_init(void) {
 

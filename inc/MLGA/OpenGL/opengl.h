@@ -5,12 +5,11 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#include "KHR/khrplatform.h"
-
 #ifdef MLGA_GL_COMPATIBILITY_PROFILE
 	#ifdef MLGA_GL_CORE_PROFILE
 		#error "MLGA_GL_COMPATIBILITY_PROFILE and MLGA_GL_CORE_PROFILE are mutually exclusive"
 	#endif /* MLGA_GL_CORE_PROFILE */
+	#define MGLL_GL_PROFILE
 	#include "GL/gl.h"
 	#include "GL/glext.h"
 #endif /* MLGA_GL_COMPATIBILITY_PROFILE */
@@ -24,6 +23,12 @@ extern "C" {
 
 #ifdef _WIN32
 	#include "GL/wglext.h"
+	#ifdef MLGA_GL_CORE_PROFILE
+		#define MLGA_GL_PROFILE WGL_CONTEXT_CORE_PROFILE_BIT_ARB
+	#endif /* MGLL_GL_CORE_PROFILE */
+	#ifdef MLGA_GL_COMPATIBILITY_PROFILE
+		#define MLGA_GL_PROFILE WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB
+	#endif /* MGLL_GL_COMPATIBILITY_PROFILE */
 #endif /* MLGA_PLATFORM_WINDOWS */
 
 #ifdef __linux__
