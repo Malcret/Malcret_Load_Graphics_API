@@ -32,6 +32,7 @@ extern "C" {
 #define GLAPI extern
 #endif
 
+
 #ifndef MLGA_GL_VERSION_MAJOR
 	#define MLGA_GL_VERSION_MAJOR 4
 #endif /* !MLGA_GL_VERSION_MAJOR */
