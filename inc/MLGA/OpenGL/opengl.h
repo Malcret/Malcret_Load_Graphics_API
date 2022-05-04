@@ -251,6 +251,231 @@ int mlga_init(void);
 #define wglWaitForSbcOML _mlga_glFunc(PFNWGLWAITFORSBCOMLPROC, wglWaitForSbcOML)
 #endif /* WGL_OML_sync_control */
 
+#ifdef GLX_VERSION_1_3
+#define glXGetFBConfigs _mlga_glFunc(PFNGLXGETFBCONFIGSPROC, glXGetFBConfigs)
+#define glXChooseFBConfig _mlga_glFunc(PFNGLXCHOOSEFBCONFIGPROC, glXChooseFBConfig)
+#define glXGetFBConfigAttrib _mlga_glFunc(PFNGLXGETFBCONFIGATTRIBPROC, glXGetFBConfigAttrib)
+#define glXGetVisualFromFBConfig _mlga_glFunc(PFNGLXGETVISUALFROMFBCONFIGPROC, glXGetVisualFromFBConfig)
+#define glXCreateWindow _mlga_glFunc(PFNGLXCREATEWINDOWPROC, glXCreateWindow)
+#define glXDestroyWindow _mlga_glFunc(PFNGLXDESTROYWINDOWPROC, glXDestroyWindow)
+#define glXCreatePixmap _mlga_glFunc(PFNGLXCREATEPIXMAPPROC, glXCreatePixmap)
+#define glXDestroyPixmap _mlga_glFunc(PFNGLXDESTROYPIXMAPPROC, glXDestroyPixmap)
+#define glXCreatePbuffer _mlga_glFunc(PFNGLXCREATEPBUFFERPROC, glXCreatePbuffer)
+#define glXDestroyPbuffer _mlga_glFunc(PFNGLXDESTROYPBUFFERPROC, glXDestroyPbuffer)
+#define glXQueryDrawable _mlga_glFunc(PFNGLXQUERYDRAWABLEPROC, glXQueryDrawable)
+#define glXCreateNewContext _mlga_glFunc(PFNGLXCREATENEWCONTEXTPROC, glXCreateNewContext)
+#define glXMakeContextCurrent _mlga_glFunc(PFNGLXMAKECONTEXTCURRENTPROC, glXMakeContextCurrent)
+#define glXGetCurrentReadDrawable _mlga_glFunc(PFNGLXGETCURRENTREADDRAWABLEPROC, glXGetCurrentReadDrawable)
+#define glXQueryContext _mlga_glFunc(PFNGLXQUERYCONTEXTPROC, glXQueryContext)
+#define glXSelectEvent _mlga_glFunc(PFNGLXSELECTEVENTPROC, glXSelectEvent)
+#define glXGetSelectedEvent _mlga_glFunc(PFNGLXGETSELECTEDEVENTPROC, glXGetSelectedEvent)
+#endif /* GLX_VERSION_1_3 */
+
+#ifdef GLX_VERSION_1_4
+#define glXGetProcAddress _mlga_glFunc(PFNGLXGETPROCADDRESSPROC, glXGetProcAddress)
+#endif /* GLX_VERSION_1_4 */
+
+#ifdef GLX_ARB_create_context
+#define glXCreateContextAttribsARB _mlga_glFunc(PFNGLXCREATECONTEXTATTRIBSARBPROC, glXCreateContextAttribsARB)
+#endif /* GLX_ARB_create_context */
+
+#ifdef GLX_ARB_get_proc_address
+#define glXGetProcAddressARB _mlga_glFunc(PFNGLXGETPROCADDRESSARBPROC, glXGetProcAddressARB)
+#endif /* GLX_ARB_get_proc_address */
+
+#ifdef GLX_AMD_gpu_association
+#define glXGetGPUIDsAMD _mlga_glFunc(PFNGLXGETGPUIDSAMDPROC, glXGetGPUIDsAMD)
+#define glXGetGPUInfoAMD _mlga_glFunc(PFNGLXGETGPUINFOAMDPROC, glXGetGPUInfoAMD)
+#define glXGetContextGPUIDAMD _mlga_glFunc(PFNGLXGETCONTEXTGPUIDAMDPROC, glXGetContextGPUIDAMD)
+#define glXCreateAssociatedContextAMD _mlga_glFunc(PFNGLXCREATEASSOCIATEDCONTEXTAMDPROC, glXCreateAssociatedContextAMD)
+#define glXCreateAssociatedContextAttribsAMD _mlga_glFunc(PFNGLXCREATEASSOCIATEDCONTEXTATTRIBSAMDPROC, glXCreateAssociatedContextAttribsAMD)
+#define glXDeleteAssociatedContextAMD _mlga_glFunc(PFNGLXDELETEASSOCIATEDCONTEXTAMDPROC, glXDeleteAssociatedContextAMD)
+#define glXMakeAssociatedContextCurrentAMD _mlga_glFunc(PFNGLXMAKEASSOCIATEDCONTEXTCURRENTAMDPROC, glXMakeAssociatedContextCurrentAMD)
+#define glXGetCurrentAssociatedContextAMD _mlga_glFunc(PFNGLXGETCURRENTASSOCIATEDCONTEXTAMDPROC, glXGetCurrentAssociatedContextAMD)
+#define glXBlitContextFramebufferAMD _mlga_glFunc(PFNGLXBLITCONTEXTFRAMEBUFFERAMDPROC, glXBlitContextFramebufferAMD)
+#endif /* GLX_AMD_gpu_association */
+
+#ifdef GLX_EXT_import_context
+#define glXGetCurrentDisplayEXT _mlga_glFunc(PFNGLXGETCURRENTDISPLAYEXTPROC, glXGetCurrentDisplayEXT)
+#define glXQueryContextInfoEXT _mlga_glFunc(PFNGLXQUERYCONTEXTINFOEXTPROC, glXQueryContextInfoEXT)
+#define glXGetContextIDEXT _mlga_glFunc(PFNGLXGETCONTEXTIDEXTPROC, glXGetContextIDEXT)
+#define glXImportContextEXT _mlga_glFunc(PFNGLXIMPORTCONTEXTEXTPROC, glXImportContextEXT)
+#define glXFreeContextEXT _mlga_glFunc(PFNGLXFREECONTEXTEXTPROC, glXFreeContextEXT)
+#endif /* GLX_EXT_import_context */
+
+#ifdef GLX_EXT_swap_control
+#define glXSwapIntervalEXT _mlga_glFunc(PFNGLXSWAPINTERVALEXTPROC, glXSwapIntervalEXT)
+#endif /* GLX_EXT_swap_control */
+
+#ifdef GLX_EXT_texture_from_pixmap
+#define glXBindTexImageEXT _mlga_glFunc(PFNGLXBINDTEXIMAGEEXTPROC, glXBindTexImageEXT)
+#define glXReleaseTexImageEXT _mlga_glFunc(PFNGLXRELEASETEXIMAGEEXTPROC, glXReleaseTexImageEXT)
+#endif /* GLX_EXT_texture_from_pixmap */
+
+#ifdef GLX_MESA_agp_offset
+#define glXGetAGPOffsetMESA _mlga_glFunc(PFNGLXGETAGPOFFSETMESAPROC, glXGetAGPOffsetMESA)
+#endif /* GLX_MESA_agp_offset */
+
+#ifdef GLX_MESA_copy_sub_buffer
+#define glXCopySubBufferMESA _mlga_glFunc(PFNGLXCOPYSUBBUFFERMESAPROC, glXCopySubBufferMESA)
+#endif /* GLX_MESA_copy_sub_buffer */
+
+#ifdef GLX_MESA_pixmap_colormap
+#define glXCreateGLXPixmapMESA _mlga_glFunc(PFNGLXCREATEGLXPIXMAPMESAPROC, glXCreateGLXPixmapMESA)
+#endif /* GLX_MESA_pixmap_colormap */
+
+#ifdef GLX_MESA_query_renderer
+#define glXQueryCurrentRendererIntegerMESA _mlga_glFunc(PFNGLXQUERYCURRENTRENDERERINTEGERMESAPROC, glXQueryCurrentRendererIntegerMESA)
+#define glXQueryCurrentRendererStringMESA _mlga_glFunc(PFNGLXQUERYCURRENTRENDERERSTRINGMESAPROC, glXQueryCurrentRendererStringMESA)
+#define glXQueryRendererIntegerMESA _mlga_glFunc(PFNGLXQUERYRENDERERINTEGERMESAPROC, glXQueryRendererIntegerMESA)
+#define glXQueryRendererStringMESA _mlga_glFunc(PFNGLXQUERYRENDERERSTRINGMESAPROC, glXQueryRendererStringMESA)
+#endif /* GLX_MESA_query_renderer */
+
+#ifdef GLX_MESA_release_buffers
+#define glXReleaseBuffersMESA _mlga_glFunc(PFNGLXRELEASEBUFFERSMESAPROC, glXReleaseBuffersMESA)
+#endif /* GLX_MESA_release_buffers */
+
+#ifdef GLX_MESA_set_3dfx_mode
+#define glXSet3DfxModeMESA _mlga_glFunc(PFNGLXSET3DFXMODEMESAPROC, glXSet3DfxModeMESA)
+#endif /* GLX_MESA_set_3dfx_mode */
+
+#ifdef GLX_MESA_swap_control
+#define glXGetSwapIntervalMESA _mlga_glFunc(PFNGLXGETSWAPINTERVALMESAPROC, glXGetSwapIntervalMESA)
+#define glXSwapIntervalMESA _mlga_glFunc(PFNGLXSWAPINTERVALMESAPROC, glXSwapIntervalMESA)
+#endif /* GLX_MESA_swap_control */
+
+#ifdef GLX_NV_copy_buffer
+#define glXCopyBufferSubDataNV _mlga_glFunc(PFNGLXCOPYBUFFERSUBDATANVPROC, glXCopyBufferSubDataNV)
+#define glXNamedCopyBufferSubDataNV _mlga_glFunc(PFNGLXNAMEDCOPYBUFFERSUBDATANVPROC, glXNamedCopyBufferSubDataNV)
+#endif /* GLX_NV_copy_buffer */
+
+#ifdef GLX_NV_copy_image
+#define glXCopyImageSubDataNV _mlga_glFunc(PFNGLXCOPYIMAGESUBDATANVPROC, glXCopyImageSubDataNV)
+#endif /* GLX_NV_copy_image */
+
+#ifdef GLX_NV_delay_before_swap
+#define glXDelayBeforeSwapNV _mlga_glFunc(PFNGLXDELAYBEFORESWAPNVPROC, glXDelayBeforeSwapNV)
+#endif /* GLX_NV_delay_before_swap */
+
+#ifdef GLX_NV_present_video
+#define glXEnumerateVideoDevicesNV _mlga_glFunc(PFNGLXENUMERATEVIDEODEVICESNVPROC, glXEnumerateVideoDevicesNV)
+#define glXBindVideoDeviceNV _mlga_glFunc(PFNGLXBINDVIDEODEVICENVPROC, glXBindVideoDeviceNV)
+#endif /* GLX_NV_present_video */
+
+#ifdef GLX_NV_swap_group
+#define glXJoinSwapGroupNV _mlga_glFunc(PFNGLXJOINSWAPGROUPNVPROC, glXJoinSwapGroupNV)
+#define glXBindSwapBarrierNV _mlga_glFunc(PFNGLXBINDSWAPBARRIERNVPROC, glXBindSwapBarrierNV)
+#define glXQuerySwapGroupNV _mlga_glFunc(PFNGLXQUERYSWAPGROUPNVPROC, glXQuerySwapGroupNV)
+#define glXQueryMaxSwapGroupsNV _mlga_glFunc(PFNGLXQUERYMAXSWAPGROUPSNVPROC, glXQueryMaxSwapGroupsNV)
+#define glXQueryFrameCountNV _mlga_glFunc(PFNGLXQUERYFRAMECOUNTNVPROC, glXQueryFrameCountNV)
+#define glXResetFrameCountNV _mlga_glFunc(PFNGLXRESETFRAMECOUNTNVPROC, glXResetFrameCountNV)
+#endif /* GLX_NV_swap_group */
+
+#ifdef GLX_NV_video_capture
+#define glXBindVideoCaptureDeviceNV _mlga_glFunc(PFNGLXBINDVIDEOCAPTUREDEVICENVPROC, glXBindVideoCaptureDeviceNV)
+#define glXEnumerateVideoCaptureDevicesNV _mlga_glFunc(PFNGLXENUMERATEVIDEOCAPTUREDEVICESNVPROC, glXEnumerateVideoCaptureDevicesNV)
+#define glXLockVideoCaptureDeviceNV _mlga_glFunc(PFNGLXLOCKVIDEOCAPTUREDEVICENVPROC, glXLockVideoCaptureDeviceNV)
+#define glXQueryVideoCaptureDeviceNV _mlga_glFunc(PFNGLXQUERYVIDEOCAPTUREDEVICENVPROC, glXQueryVideoCaptureDeviceNV)
+#define glXReleaseVideoCaptureDeviceNV _mlga_glFunc(PFNGLXRELEASEVIDEOCAPTUREDEVICENVPROC, glXReleaseVideoCaptureDeviceNV)
+#endif /* GLX_NV_video_capture */
+
+#ifdef GLX_NV_video_output
+#define glXGetVideoDeviceNV _mlga_glFunc(PFNGLXGETVIDEODEVICENVPROC, glXGetVideoDeviceNV)
+#define glXReleaseVideoDeviceNV _mlga_glFunc(PFNGLXRELEASEVIDEODEVICENVPROC, glXReleaseVideoDeviceNV)
+#define glXBindVideoImageNV _mlga_glFunc(PFNGLXBINDVIDEOIMAGENVPROC, glXBindVideoImageNV)
+#define glXReleaseVideoImageNV _mlga_glFunc(PFNGLXRELEASEVIDEOIMAGENVPROC, glXReleaseVideoImageNV)
+#define glXSendPbufferToVideoNV _mlga_glFunc(PFNGLXSENDPBUFFERTOVIDEONVPROC, glXSendPbufferToVideoNV)
+#define glXGetVideoInfoNV _mlga_glFunc(PFNGLXGETVIDEOINFONVPROC, glXGetVideoInfoNV)
+#endif /* GLX_NV_video_output */
+
+#ifdef GLX_OML_sync_control
+#define glXGetSyncValuesOML _mlga_glFunc(PFNGLXGETSYNCVALUESOMLPROC, glXGetSyncValuesOML)
+#define glXGetMscRateOML _mlga_glFunc(PFNGLXGETMSCRATEOMLPROC, glXGetMscRateOML)
+#define glXSwapBuffersMscOML _mlga_glFunc(PFNGLXSWAPBUFFERSMSCOMLPROC, glXSwapBuffersMscOML)
+#define glXWaitForMscOML _mlga_glFunc(PFNGLXWAITFORMSCOMLPROC, glXWaitForMscOML)
+#define glXWaitForSbcOML _mlga_glFunc(PFNGLXWAITFORSBCOMLPROC, glXWaitForSbcOML)
+#endif /* GLX_OML_sync_control */
+
+#ifdef GLX_SGIX_dmbuffer
+#ifdef _DM_BUFFER_H_
+#define glXAssociateDMPbufferSGIX _mlga_glFunc(PFNGLXASSOCIATEDMPBUFFERSGIXPROC, glXAssociateDMPbufferSGIX)
+#endif /* _DM_BUFFER_H_ */
+#endif /* GLX_SGIX_dmbuffer */
+
+#ifdef GLX_SGIX_fbconfig
+#define glXGetFBConfigAttribSGIX _mlga_glFunc(PFNGLXGETFBCONFIGATTRIBSGIXPROC, glXGetFBConfigAttribSGIX)
+#define glXChooseFBConfigSGIX _mlga_glFunc(PFNGLXCHOOSEFBCONFIGSGIXPROC, glXChooseFBConfigSGIX)
+#define glXCreateGLXPixmapWithConfigSGIX _mlga_glFunc(PFNGLXCREATEGLXPIXMAPWITHCONFIGSGIXPROC, glXCreateGLXPixmapWithConfigSGIX)
+#define glXCreateContextWithConfigSGIX _mlga_glFunc(PFNGLXCREATECONTEXTWITHCONFIGSGIXPROC, glXCreateContextWithConfigSGIX)
+#define glXGetVisualFromFBConfigSGIX _mlga_glFunc(PFNGLXGETVISUALFROMFBCONFIGSGIXPROC, glXGetVisualFromFBConfigSGIX)
+#define glXGetFBConfigFromVisualSGIX _mlga_glFunc(PFNGLXGETFBCONFIGFROMVISUALSGIXPROC, glXGetFBConfigFromVisualSGIX)
+#endif /* GLX_SGIX_fbconfig */
+
+#ifdef GLX_SGIX_hyperpipe
+#define glXQueryHyperpipeNetworkSGIX _mlga_glFunc(PFNGLXQUERYHYPERPIPENETWORKSGIXPROC, glXQueryHyperpipeNetworkSGIX)
+#define glXHyperpipeConfigSGIX _mlga_glFunc(PFNGLXHYPERPIPECONFIGSGIXPROC, glXHyperpipeConfigSGIX)
+#define glXQueryHyperpipeConfigSGIX _mlga_glFunc(PFNGLXQUERYHYPERPIPECONFIGSGIXPROC, glXQueryHyperpipeConfigSGIX)
+#define glXDestroyHyperpipeConfigSGIX _mlga_glFunc(PFNGLXDESTROYHYPERPIPECONFIGSGIXPROC, glXDestroyHyperpipeConfigSGIX)
+#define glXBindHyperpipeSGIX _mlga_glFunc(PFNGLXBINDHYPERPIPESGIXPROC, glXBindHyperpipeSGIX)
+#define glXQueryHyperpipeBestAttribSGIX _mlga_glFunc(PFNGLXQUERYHYPERPIPEBESTATTRIBSGIXPROC, glXQueryHyperpipeBestAttribSGIX)
+#define glXHyperpipeAttribSGIX _mlga_glFunc(PFNGLXHYPERPIPEATTRIBSGIXPROC, glXHyperpipeAttribSGIX)
+#define glXQueryHyperpipeAttribSGIX _mlga_glFunc(PFNGLXQUERYHYPERPIPEATTRIBSGIXPROC, glXQueryHyperpipeAttribSGIX)
+#endif /* GLX_SGIX_hyperpipe */
+
+#ifdef GLX_SGIX_pbuffer
+#define glXCreateGLXPbufferSGIX _mlga_glFunc(PFNGLXCREATEGLXPBUFFERSGIXPROC, glXCreateGLXPbufferSGIX)
+#define glXDestroyGLXPbufferSGIX _mlga_glFunc(PFNGLXDESTROYGLXPBUFFERSGIXPROC, glXDestroyGLXPbufferSGIX)
+#define glXQueryGLXPbufferSGIX _mlga_glFunc(PFNGLXQUERYGLXPBUFFERSGIXPROC, glXQueryGLXPbufferSGIX)
+#define glXSelectEventSGIX _mlga_glFunc(PFNGLXSELECTEVENTSGIXPROC, glXSelectEventSGIX)
+#define glXGetSelectedEventSGIX _mlga_glFunc(PFNGLXGETSELECTEDEVENTSGIXPROC, glXGetSelectedEventSGIX)
+#endif /* GLX_SGIX_pbuffer */
+
+#ifdef GLX_SGIX_swap_barrier
+#define glXBindSwapBarrierSGIX _mlga_glFunc(PFNGLXBINDSWAPBARRIERSGIXPROC, glXBindSwapBarrierSGIX)
+#define glXQueryMaxSwapBarriersSGIX _mlga_glFunc(PFNGLXQUERYMAXSWAPBARRIERSSGIXPROC, glXQueryMaxSwapBarriersSGIX)
+#endif /* GLX_SGIX_swap_barrier */
+
+#ifdef GLX_SGIX_swap_group
+#define glXJoinSwapGroupSGIX _mlga_glFunc(PFNGLXJOINSWAPGROUPSGIXPROC, glXJoinSwapGroupSGIX)
+#endif /* GLX_SGIX_swap_group */
+
+#ifdef GLX_SGIX_video_resize
+#define glXBindChannelToWindowSGIX _mlga_glFunc(PFNGLXBINDCHANNELTOWINDOWSGIXPROC, glXBindChannelToWindowSGIX)
+#define glXChannelRectSGIX _mlga_glFunc(PFNGLXCHANNELRECTSGIXPROC, glXChannelRectSGIX)
+#define glXQueryChannelRectSGIX _mlga_glFunc(PFNGLXQUERYCHANNELRECTSGIXPROC, glXQueryChannelRectSGIX)
+#define glXQueryChannelDeltasSGIX _mlga_glFunc(PFNGLXQUERYCHANNELDELTASSGIXPROC, glXQueryChannelDeltasSGIX)
+#define glXChannelRectSyncSGIX _mlga_glFunc(PFNGLXCHANNELRECTSYNCSGIXPROC, glXChannelRectSyncSGIX)
+#endif /* GLX_SGIX_video_resize */
+
+#ifdef GLX_SGIX_video_source
+#ifdef _VL_H
+#define glXCreateGLXVideoSourceSGIX _mlga_glFunc(PFNGLXCREATEGLXVIDEOSOURCESGIXPROC, glXCreateGLXVideoSourceSGIX)
+#define glXDestroyGLXVideoSourceSGIX _mlga_glFunc(PFNGLXDESTROYGLXVIDEOSOURCESGIXPROC, glXDestroyGLXVideoSourceSGIX)
+#endif /* _VL_H */
+#endif /* GLX_SGIX_video_source */
+
+#ifdef GLX_SGI_cushion
+#define glXCushionSGI _mlga_glFunc(PFNGLXCUSHIONSGIPROC, glXCushionSGI)
+#endif /* GLX_SGI_cushion */
+
+#ifdef GLX_SGI_make_current_read
+#define glXMakeCurrentReadSGI _mlga_glFunc(PFNGLXMAKECURRENTREADSGIPROC, glXMakeCurrentReadSGI)
+#define glXGetCurrentReadDrawableSGI _mlga_glFunc(PFNGLXGETCURRENTREADDRAWABLESGIPROC, glXGetCurrentReadDrawableSGI)
+#endif /* GLX_SGI_make_current_read */
+
+#ifdef GLX_SGI_swap_control
+#define glXSwapIntervalSGI _mlga_glFunc(PFNGLXSWAPINTERVALSGIPROC, glXSwapIntervalSGI)
+#endif /* GLX_SGI_swap_control */
+
+#ifdef GLX_SGI_video_sync
+#define glXGetVideoSyncSGI _mlga_glFunc(PFNGLXGETVIDEOSYNCSGIPROC, glXGetVideoSyncSGI)
+#define glXWaitVideoSyncSGI _mlga_glFunc(PFNGLXWAITVIDEOSYNCSGIPROC, glXWaitVideoSyncSGI)
+#endif /* GLX_SGI_video_sync */
+
+#ifdef GLX_SUN_get_transparent_index
+#define glXGetTransparentIndexSUN _mlga_glFunc(PFNGLXGETTRANSPARENTINDEXSUNPROC, glXGetTransparentIndexSUN)
+#endif /* GLX_SUN_get_transparent_index */
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
