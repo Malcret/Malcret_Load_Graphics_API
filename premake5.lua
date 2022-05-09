@@ -7,7 +7,7 @@ workspace "Malcret_Load_Graphics_API"
 
 cversion = "C11"
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.architecture}/%{cfg.system}/%{cfg.buildcfg}"
 _targetdir = "bin/" .. outputdir .. "/%{prj.name}"
 _objdir = _targetdir .. "/obj"
 
