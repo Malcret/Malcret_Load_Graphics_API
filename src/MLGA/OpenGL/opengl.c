@@ -800,7 +800,7 @@ mlga_loadGLFunc(PFNGLPOLYGONOFFSETCLAMPPROC, glPolygonOffsetClamp);
 #define MLGA_LOAD_GL_CORE_4_6_FUNC
 #endif /* MLGA_LOAD_GL_CORE_4_6_FUNC */
 
-int mlga_init(void) {
+int mlga_opengl_init(void) {
 
 	MLGA_LOAD_GL_CORE_1_0_FUNC
 	MLGA_LOAD_GL_CORE_1_1_FUNC

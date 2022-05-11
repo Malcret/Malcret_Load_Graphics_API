@@ -5,6 +5,10 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#if !defined(MLGA_GL_COMPATIBILITY_PROFILE) && !defined(MLGA_GL_CORE_PROFILE)
+	#define MLGA_GL_CORE_PROFILE
+#endif
+
 #ifdef MLGA_GL_COMPATIBILITY_PROFILE
 	#ifdef MLGA_GL_CORE_PROFILE
 		#error "MLGA_GL_COMPATIBILITY_PROFILE and MLGA_GL_CORE_PROFILE are mutually exclusive"
@@ -37,7 +41,7 @@ extern "C" {
 
 void *mlga_getGLFuncAddress(const char *name);
 #define _mlga_glFunc(type, name) ((type)mlga_getGLFuncAddress(#name))
-int mlga_init(void);
+int mlga_opengl_init(void);
 
 #ifdef WGL_ARB_buffer_region
 #define wglCreateBufferRegionARB _mlga_glFunc(PFNWGLCREATEBUFFERREGIONARBPROC, wglCreateBufferRegionARB)
