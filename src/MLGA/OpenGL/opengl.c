@@ -14,7 +14,7 @@ void *mlga_getGLFuncAddress(const char *name) {
 	}
 
 	if (!p) {
-		fprintf(stderr, "Failed to load OpenGL function %s", name);
+		fprintf(stderr, "Failed to load OpenGL function %s\n", name);
 	}
 
 	return p;
@@ -35,14 +35,14 @@ void *mlga_getGLFuncAddress(const char *name) {
 	}
 
 	if (!p) {
-		fprintf(stderr, "Failed to load OpenGL function %s", name);
+		fprintf(stderr, "Failed to load OpenGL function %s\n", name);
 	}
 
 	return p;
 }
 #endif /* MGLL_PLATFORM_LINUX */
 
-#define mlga_loadGLFunc(type, name) type name = (type)mlga_getGLFuncAddress(#name); if (!name) { return 1; }
+#define mlga_loadGLFunc(type, name) type name = (type)mlga_getGLFuncAddress(#name);
 
 #ifdef MLGA_GL_CORE_PROFILE
 #ifdef GL_VERSION_1_0
@@ -801,7 +801,6 @@ mlga_loadGLFunc(PFNGLPOLYGONOFFSETCLAMPPROC, glPolygonOffsetClamp);
 #endif /* MLGA_LOAD_GL_CORE_4_6_FUNC */
 
 int mlga_opengl_init(void) {
-
 	MLGA_LOAD_GL_CORE_1_0_FUNC
 	MLGA_LOAD_GL_CORE_1_1_FUNC
 	MLGA_LOAD_GL_CORE_1_2_FUNC
