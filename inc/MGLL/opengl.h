@@ -1,47 +1,47 @@
-#ifndef MLGA_H
-#define MLGA_H
+#ifndef MGLL_H
+#define MGLL_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
-#if !defined(MLGA_GL_COMPATIBILITY_PROFILE) && !defined(MLGA_GL_CORE_PROFILE)
-	#define MLGA_GL_CORE_PROFILE
+#if !defined(MGLL_GL_COMPATIBILITY_PROFILE) && !defined(MGLL_GL_CORE_PROFILE)
+	#define MGLL_GL_CORE_PROFILE
 #endif
 
-#ifdef MLGA_GL_COMPATIBILITY_PROFILE
-	#ifdef MLGA_GL_CORE_PROFILE
-		#error "MLGA_GL_COMPATIBILITY_PROFILE and MLGA_GL_CORE_PROFILE are mutually exclusive"
-	#endif /* MLGA_GL_CORE_PROFILE */
+#ifdef MGLL_GL_COMPATIBILITY_PROFILE
+	#ifdef MGLL_GL_CORE_PROFILE
+		#error "MGLL_GL_COMPATIBILITY_PROFILE and MGLL_GL_CORE_PROFILE are mutually exclusive"
+	#endif /* MGLL_GL_CORE_PROFILE */
 	#define MGLL_GL_PROFILE
 	#include "GL/gl.h"
 	#include "GL/glext.h"
-#endif /* MLGA_GL_COMPATIBILITY_PROFILE */
+#endif /* MGLL_GL_COMPATIBILITY_PROFILE */
 
-#ifdef MLGA_GL_CORE_PROFILE
-	#ifdef MLGA_GL_COMPATIBILITY_PROFILE
-		#error "MLGA_GL_CORE_PROFILE and MLGA_GL_COMPATIBILITY_PROFILE are mutually exclusive"
-	#endif /* MLGA_GL_COMPATIBILITY_PROFILE */
+#ifdef MGLL_GL_CORE_PROFILE
+	#ifdef MGLL_GL_COMPATIBILITY_PROFILE
+		#error "MGLL_GL_CORE_PROFILE and MGLL_GL_COMPATIBILITY_PROFILE are mutually exclusive"
+	#endif /* MGLL_GL_COMPATIBILITY_PROFILE */
 	#include "GL/glcorearb.h"
-#endif /* MLGA_GL_CORE_PROFILE */
+#endif /* MGLL_GL_CORE_PROFILE */
 
 #ifdef _WIN32
 	#include "GL/wglext.h"
-	#ifdef MLGA_GL_CORE_PROFILE
-		#define MLGA_GL_PROFILE WGL_CONTEXT_CORE_PROFILE_BIT_ARB
+	#ifdef MGLL_GL_CORE_PROFILE
+		#define MGLL_GL_PROFILE WGL_CONTEXT_CORE_PROFILE_BIT_ARB
 	#endif /* MGLL_GL_CORE_PROFILE */
-	#ifdef MLGA_GL_COMPATIBILITY_PROFILE
-		#define MLGA_GL_PROFILE WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB
+	#ifdef MGLL_GL_COMPATIBILITY_PROFILE
+		#define MGLL_GL_PROFILE WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB
 	#endif /* MGLL_GL_COMPATIBILITY_PROFILE */
-#endif /* MLGA_PLATFORM_WINDOWS */
+#endif /* _WIN32 */
 
 #ifdef __linux__
 	#include "GL/glxext.h"
 #endif /* MLGA_PLATFORM_LINUX */
 
-void *mlga_getGLFuncAddress(const char *name);
-#define _mlga_glFunc(type, name) ((type)mlga_getGLFuncAddress(#name))
-int mlga_opengl_init(void);
+void *mgll_getGLFuncAddress(const char *name);
+#define _mgll_glFunc(type, name) ((type)mgll_getGLFuncAddress(#name))
+int mgll_init(void);
 
 #ifdef WGL_ARB_buffer_region
 #define wglCreateBufferRegionARB _mlga_glFunc(PFNWGLCREATEBUFFERREGIONARBPROC, wglCreateBufferRegionARB)
@@ -484,4 +484,4 @@ int mlga_opengl_init(void);
 }
 #endif /* __cplusplus */
 
-#endif /* MLGA_H */
+#endif /* MGLL_H */

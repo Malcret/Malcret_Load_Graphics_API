@@ -1,4 +1,4 @@
-workspace "Malcret_Load_Graphics_API"
+workspace "OpenGLLoader"
 	architecture "x86_64"
 	configurations {
 		"Debug",
@@ -11,7 +11,7 @@ outputdir = "%{cfg.architecture}/%{cfg.system}/%{cfg.buildcfg}"
 _targetdir = "bin/" .. outputdir .. "/%{prj.name}"
 _objdir = _targetdir .. "/obj"
 
-project "MLGA"
+project "mgll"
 	kind "StaticLib"
 	language "C"
 
